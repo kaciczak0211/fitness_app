@@ -1,23 +1,14 @@
 const legs = document.getElementById('legs_day');
+const text = document.getElementById('playerText')
 const push = document.getElementById('push_day');
 const pull = document.getElementById('pull_day');
 
+const btn = document.querySelectorAll(".btn")
 
-function choseLegs(){
-        console.log(legs.value)
-    }
+let day;
 
-legs.addEventListener('click', choseLegs, true);
+btn.forEach(button => button.addEventListener("click", () => {
+    day = button.textContent;
+    text.textContent = `Let's make: ${day}`
 
-function chosePull(){
-    console.log(pull.value)
-}
-
-pull.addEventListener('click', chosePull, true);
-
-function chosePush(){
-    console.log(push.value)
-}
-
-push.addEventListener('click', chosePush, true);
-
+}))
