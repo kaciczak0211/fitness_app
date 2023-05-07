@@ -20,3 +20,4 @@ function chosePush(){
 }
 
 push.addEventListener('click', chosePush, true);
+

@@ -1,7 +1,22 @@
-#legs_day{
-    color: red;
+
+
+h1{
+    text-align: center;
 }
 
-#training_mode{
-    color: blue;
+.training_mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    margin: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: green;
+    cursor: pointer;
+    color: white;
 }
