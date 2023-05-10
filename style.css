@@ -2,7 +2,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .content{
-    max-width: 500px;
+    max-width: 800px;
     margin: auto;
 }
 h1{
@@ -26,12 +26,35 @@ button:hover{
     color: white;
 }
 
-#start_btn{
-    margin: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: blue;
-    color: white;
-    font-size: 36px;
+.stopwatch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.filed {
+    display: flex; /* enable Flexbox */
+    justify-content: center; /* center child elements horizontally */
+    align-items: center; /* center child elements vertically */
+  }
+.exe_con{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+}
+
+p{
+    cursor: pointer;
+}
+
+p:hover{
+    color: red;
+}
+
+h2{
+    text-align: center;
 }
