@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="content">
-    <h1>Select training mode:</h1><br>
+    <h1>Select PPL Mode:</h1><br>
 <div class="training_mode">
     <button class="btn">Push Day</button><br>
     <button class="btn">Pull Day</button><br>
@@ -20,7 +20,20 @@
 <div class="stopwatch">
     <h1>Set a timer:</h1>
     <div class="circle">
-        <div class="time" id="time">00:00:00:00</div>
+        <div class="time" id="time">
+            <span class="digit" id="hr">
+                00:
+            </span>
+            <span class="digit" id="min">
+                00:
+            </span>
+            <span class="digit" id="sec">
+                00:
+            </span>
+            <span class="digit" id="mili">
+                00
+            </span>
+        </div>
     </div>
     <div class="controls">
         <button id="start">Start</button>

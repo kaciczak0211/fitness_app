@@ -11,22 +11,95 @@ btn.forEach(button => button.addEventListener("click", () => {
 }))
 
 // create timer
+// btn get elements
 let startBtn = document.getElementById("start");
 let pauseBtn = document.getElementById("pause");
 let resetBtn = document.getElementById("reset");
+// hour varible
+let hour = 00;
+let min = 00;
+let sec = 00;
+let miliSec = 00;
 
-let bgn = 0;
-let interval;
-let timerDisplay = document.getElementById("time");
 
-function start(){
-    let startTime = Date.now() - bgn;
-    interval = setInterval(() => {
-        bgn = Date.now() - startTime;
-        timerDisplay(bgn);
-    }, 10);
-    displayButton("stop");
-}
+//start btn addEventListener
+startBtn.addEventListener('click', function (){
+    timer = true;
+    stopWatch();
+});
+
+//stop btn addEventListener
+pauseBtn.addEventListener('click', function (){
+    timer = false;
+});
+
+//reset btn addEventListener
+resetBtn.addEventListener('click', function (){
+    timer = false;
+    hour = 0;
+    sec = 0;
+    miliSec = 0;
+    document.getElementById("hr").innerHTML = "00:";
+    document.getElementById("min").innerHTML = "00:";
+    document.getElementById("sec").innerHTML = "00:";
+    document.getElementById("mili").innerHTML = "00";
+});
+
+// stopWatch function
+function stopWatch() {
+    if(timer) {
+        miliSec++;
+
+        if(miliSec == 100) {
+            sec++;
+            miliSec = 0;
+        }
+
+        if(sec == 60) {
+            min++;
+            sec = 0;
+        }
+        
+        if(min == 60) {
+            hour++;
+            min = 0;
+            sec = 0;
+        }
+    
+    let hrNext = hour;
+    let minNext = min;
+    let secNext = sec;
+    let miniSecNext = miliSec;
+
+    if(hour < 10) {
+        hrNext = "0" + hrNext;
+    }
+
+    if(min < 10) {
+        minNext = "0" + minNext;
+    }
+
+    if(sec < 10) {
+        secNext = "0" + secNext;
+    }
+
+    if(miliSec < 10) {
+        miniSecNext = "0" + miniSecNext;
+    }
+
+    document.getElementById("hr").innerHTML = hrNext + ":";
+    document.getElementById("min").innerHTML = minNext + ":";
+    document.getElementById("sec").innerHTML = secNext + ":";
+    document.getElementById("mili").innerHTML = miniSecNext;
+    setTimeout(stopWatch, 10);
+    }
+};
+
+
+
+
+
+
 
 
 // create list
@@ -40,11 +113,11 @@ addExe.addEventListener('click', function(){
     newExe.innerText = input.value;
     exeCon.appendChild(newExe);
     input.value = "";
-    newExe.addEventListener('click', function(){
-        exeCon.style.textDecoration = "line-through";
-    })
     newExe.addEventListener('dblclick', function(){
-        exeCon.removeChild(newExe);
+        exeCon.removeChild(newExe); 
+    })
+    newExe.addEventListener('click', function(){
+        exeCon.style.color = "red";
     })
 })
 
