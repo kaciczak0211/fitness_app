@@ -49,11 +49,9 @@ button:hover{
 
 p{
     cursor: pointer;
+    color: black;
 }
 
-p:hover{
-    color: red;
-}
 
 h2{
     text-align: center;

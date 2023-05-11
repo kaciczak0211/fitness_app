@@ -107,17 +107,20 @@ function stopWatch() {
 let addExe = document.getElementById("exe_btn");
 let exeCon = document.getElementById("con");
 let input = document.getElementById("exe");
+let next = 0;
 
 addExe.addEventListener('click', function(){
+    next++;
     let newExe = document.createElement('p');
-    newExe.innerText = input.value;
+    newExe.innerText = next + ". " + input.value;
     exeCon.appendChild(newExe);
     input.value = "";
     newExe.addEventListener('dblclick', function(){
-        exeCon.removeChild(newExe); 
+        exeCon.removeChild(newExe);
     })
-    newExe.addEventListener('click', function(){
-        exeCon.style.color = "red";
+    newExe.addEventListener('click', function(event){
+        newExe.style.textDecoration = "line-through";
+        newExe.style.color = "red";
     })
 })
 
